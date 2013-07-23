@@ -10,4 +10,6 @@
 
 @interface NSString (RESTClientString)
 - (BOOL) isEqualIgnoreCase: (NSString*) other;
+- (BOOL) isEqualIgnoreCase: (NSString*) other shouldTrimSpaces:(BOOL) shouldTrimSpaces;
+- (NSString*) trim: (NSString*) stringToTrim;
 @end

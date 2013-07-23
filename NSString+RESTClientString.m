@@ -10,7 +10,18 @@
 
 @implementation NSString (RESTClientString)
 - (BOOL) isEqualIgnoreCase: (NSString*) other{
-    return [self compare:other options:NSCaseInsensitiveSearch] == NSOrderedSame;
+    NSString *selfStr = [self trim:self];
+    return [selfStr compare:other options:NSCaseInsensitiveSearch] == NSOrderedSame;
+}
+
+- (BOOL) isEqualIgnoreCase: (NSString*) other shouldTrimSpaces:(BOOL) shouldTrimSpaces{
+    other = [self trim:other];
+    
+    return [self isEqualIgnoreCase:other];
+}
+
+- (NSString*) trim: (NSString*) stringToTrim{
+    return [stringToTrim stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
 @end
