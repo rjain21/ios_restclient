@@ -24,4 +24,13 @@
     return [stringToTrim stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
+- (BOOL) isEmpty{
+    if(self){
+        return [self isEqualIgnoreCase:@"" shouldTrimSpaces:YES];
+    }
+    else{
+        return YES; //because the string is nill;
+    }
+}
+
 @end

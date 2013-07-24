@@ -6,8 +6,14 @@
 //  Copyright (c) 2013 RAJESH JAIN. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+typedef enum{
+    MimeTypePlainText,
+    MimeTypeXML,
+    MimeTypeJSON
+} MimeType;
 
+
+#import <Foundation/Foundation.h>
 @interface NSURLRequest (RESTClient)
 
 
@@ -20,19 +26,18 @@
 + (NSURLRequest*)httpDeleteRequestWithURL:(NSURL *)theURL headerFields:(NSDictionary*) headers;
 + (NSURLRequest*)httpDeleteRequestWithURL:(NSURL *)theURL cachePolicy:(NSURLRequestCachePolicy)cachePolicy timeoutInterval:(NSTimeInterval)timeoutInterval headerFields:(NSDictionary*) headers;
 
-+ (NSURLRequest*)httpPostRequestWithURL:(NSURL *)theURL body:(NSString*) stringBody;
++ (NSURLRequest*)httpPostRequestWithURL:(NSURL *)theURL body:(NSString*) stringBody mimeType:(MimeType) mimeType;
++ (NSURLRequest*)httpPostRequestWithURL:(NSURL *)theURL headerFields:(NSDictionary*) headers body:(NSString*) stringBody mimeType:(MimeType) mimeType;
 
-+ (NSURLRequest*)httpPostRequestWithURL:(NSURL *)theURL headerFields:(NSDictionary*) headers body:(NSString*) stringBody;
-
-+ (NSURLRequest*)httpPostRequestWithURL:(NSURL *)theURL cachePolicy:(NSURLRequestCachePolicy)cachePolicy timeoutInterval:(NSTimeInterval)timeoutInterval headerFields:(NSDictionary*) headers body:(NSString*) stringBody;
-
-
-+ (NSURLRequest*)httpPutRequestWithURL:(NSURL *)theURL body:(NSString*) stringBody;
++ (NSURLRequest*)httpPostRequestWithURL:(NSURL *)theURL cachePolicy:(NSURLRequestCachePolicy)cachePolicy timeoutInterval:(NSTimeInterval)timeoutInterval headerFields:(NSDictionary*) headers body:(NSString*) stringBody mimeType:(MimeType) mimeType;
 
 
-+ (NSURLRequest*)httpPutRequestWithURL:(NSURL *)theURL headerFields:(NSDictionary*) headers body:(NSString*) stringBody;
++ (NSURLRequest*)httpPutRequestWithURL:(NSURL *)theURL body:(NSString*) stringBody mimeType:(MimeType) mimeType;
 
-+ (NSURLRequest*)httpPutRequestWithURL:(NSURL *)theURL cachePolicy:(NSURLRequestCachePolicy)cachePolicy timeoutInterval:(NSTimeInterval)timeoutInterval headerFields:(NSDictionary*) headers body:(NSString*) stringBody;
+
++ (NSURLRequest*)httpPutRequestWithURL:(NSURL *)theURL headerFields:(NSDictionary*) headers body:(NSString*) stringBody mimeType:(MimeType) mimeType;
+
++ (NSURLRequest*)httpPutRequestWithURL:(NSURL *)theURL cachePolicy:(NSURLRequestCachePolicy)cachePolicy timeoutInterval:(NSTimeInterval)timeoutInterval headerFields:(NSDictionary*) headers body:(NSString*) stringBody mimeType:(MimeType) mimeType;
 
 
 @end

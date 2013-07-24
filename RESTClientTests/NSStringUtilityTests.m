@@ -82,4 +82,16 @@
     BOOL isEqu = [str isEqualIgnoreCase:@"\nhttp://www.yahoo.com " shouldTrimSpaces:YES]; //only the "h" in yahoo is missing
     XCTAssertTrue(isEqu, @"Yahoo URLS with different cases should be the same");
 }
+
+- (void) testStringIsEmpty{
+    NSString *stringToTest = @"";
+    BOOL isEq = [stringToTest isEmpty];
+    XCTAssertTrue(isEq, @"The String is Empty.");
+}
+
+- (void) testStringIsEmpty_NegativeTest{
+    NSString *stringToTest = @" test ";
+    BOOL isEq = [stringToTest isEmpty];
+    XCTAssertFalse(isEq, @"The String is Empty.");
+}
 @end
