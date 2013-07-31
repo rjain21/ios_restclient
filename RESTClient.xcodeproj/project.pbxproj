@@ -10,8 +10,6 @@
 		E417AD02179E2AD800E1193D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E417AD00179E2AD800E1193D /* LICENSE */; };
 		E417AD03179E2AD800E1193D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E417AD01179E2AD800E1193D /* README.md */; };
 		E41F390F179DCA3E00F443DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41F390E179DCA3E00F443DE /* Foundation.framework */; };
-		E41F3914179DCA3E00F443DE /* RESTClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E41F3913179DCA3E00F443DE /* RESTClient.h */; };
-		E41F3916179DCA3E00F443DE /* RESTClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E41F3915179DCA3E00F443DE /* RESTClient.m */; };
 		E41F391D179DCA3E00F443DE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41F391C179DCA3E00F443DE /* XCTest.framework */; };
 		E41F391E179DCA3E00F443DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41F390E179DCA3E00F443DE /* Foundation.framework */; };
 		E41F3920179DCA3E00F443DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41F391F179DCA3E00F443DE /* UIKit.framework */; };
@@ -22,6 +20,8 @@
 		E41F393A179DCCFC00F443DE /* NSURLRequest+RESTClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E41F3938179DCCFC00F443DE /* NSURLRequest+RESTClient.m */; };
 		E430BA50179E270400053ABB /* NSString+RESTClientString.m in Sources */ = {isa = PBXBuildFile; fileRef = E430BA4F179E270400053ABB /* NSString+RESTClientString.m */; };
 		E430BA51179E270400053ABB /* NSString+RESTClientString.m in Sources */ = {isa = PBXBuildFile; fileRef = E430BA4F179E270400053ABB /* NSString+RESTClientString.m */; };
+		E4799E5917A37C34004B9473 /* RESTClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E4799E5817A37C34004B9473 /* RESTClient.m */; };
+		E4799E5A17A37C34004B9473 /* RESTClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E4799E5817A37C34004B9473 /* RESTClient.m */; };
 		E497C908179E690D004767F8 /* NSStringUtilityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E497C907179E690D004767F8 /* NSStringUtilityTests.m */; };
 		E4F29372179F418E00595C97 /* NSUrlRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F29371179F418E00595C97 /* NSUrlRequestTest.m */; };
 /* End PBXBuildFile section */
@@ -43,7 +43,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				E41F3914179DCA3E00F443DE /* RESTClient.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,8 +54,6 @@
 		E41F390B179DCA3E00F443DE /* libRESTClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRESTClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E41F390E179DCA3E00F443DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E41F3912179DCA3E00F443DE /* RESTClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RESTClient-Prefix.pch"; sourceTree = "<group>"; };
-		E41F3913179DCA3E00F443DE /* RESTClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RESTClient.h; sourceTree = "<group>"; };
-		E41F3915179DCA3E00F443DE /* RESTClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RESTClient.m; sourceTree = "<group>"; };
 		E41F391B179DCA3E00F443DE /* RESTClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RESTClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E41F391C179DCA3E00F443DE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		E41F391F179DCA3E00F443DE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -67,6 +64,8 @@
 		E41F3938179DCCFC00F443DE /* NSURLRequest+RESTClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURLRequest+RESTClient.m"; path = "RESTClient/NSURLRequest+RESTClient.m"; sourceTree = "<group>"; };
 		E430BA4E179E270400053ABB /* NSString+RESTClientString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RESTClientString.h"; sourceTree = "<group>"; };
 		E430BA4F179E270400053ABB /* NSString+RESTClientString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RESTClientString.m"; sourceTree = "<group>"; };
+		E4799E5717A37C34004B9473 /* RESTClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESTClient.h; sourceTree = SOURCE_ROOT; };
+		E4799E5817A37C34004B9473 /* RESTClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESTClient.m; sourceTree = SOURCE_ROOT; };
 		E497C907179E690D004767F8 /* NSStringUtilityTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringUtilityTests.m; sourceTree = "<group>"; };
 		E4F29371179F418E00595C97 /* NSUrlRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSUrlRequestTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,8 +131,8 @@
 		E41F3910179DCA3E00F443DE /* RESTClient */ = {
 			isa = PBXGroup;
 			children = (
-				E41F3913179DCA3E00F443DE /* RESTClient.h */,
-				E41F3915179DCA3E00F443DE /* RESTClient.m */,
+				E4799E5717A37C34004B9473 /* RESTClient.h */,
+				E4799E5817A37C34004B9473 /* RESTClient.m */,
 				E41F3911179DCA3E00F443DE /* Supporting Files */,
 			);
 			path = RESTClient;
@@ -250,7 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E41F3916179DCA3E00F443DE /* RESTClient.m in Sources */,
+				E4799E5917A37C34004B9473 /* RESTClient.m in Sources */,
 				E430BA50179E270400053ABB /* NSString+RESTClientString.m in Sources */,
 				E41F3939179DCCFC00F443DE /* NSURLRequest+RESTClient.m in Sources */,
 			);
@@ -262,6 +261,7 @@
 			files = (
 				E497C908179E690D004767F8 /* NSStringUtilityTests.m in Sources */,
 				E41F392B179DCA3E00F443DE /* RESTClientTests.m in Sources */,
+				E4799E5A17A37C34004B9473 /* RESTClient.m in Sources */,
 				E4F29372179F418E00595C97 /* NSUrlRequestTest.m in Sources */,
 				E430BA51179E270400053ABB /* NSString+RESTClientString.m in Sources */,
 				E41F393A179DCCFC00F443DE /* NSURLRequest+RESTClient.m in Sources */,

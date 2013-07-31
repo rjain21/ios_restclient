@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-
+#import "RESTClient.h"
 @interface RESTClientTests : XCTestCase
 
 @end
@@ -30,7 +30,8 @@
 
 - (void)testExample
 {
-
+    RESTClient *r=[[RESTClient alloc] init];
+    [r getData];
 }
 
 @end

@@ -80,4 +80,13 @@
     XCTAssertTrue([content_type isEqualIgnoreCase:@"application/xml"], @"The Request content type should be XML");
 }
 
+
+- (void)testHTTPPUTScenario_WithHeaders_get
+{
+    NSURLRequest* urlRequest = [NSURLRequest httpGetRequestWithURL:[NSURL URLWithString:@"http://www.yahoo.com"]];
+    NSURLConnection *conn =[NSURLConnection connectionWithRequest:urlRequest delegate:self];
+    
+}
+
+
 @end
