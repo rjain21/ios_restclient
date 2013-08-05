@@ -1,21 +1,16 @@
 //
-//  RESTClient.m
+//  AsyncRESTClient.m
 //  RESTClient
 //
-//  Created by RAJESH JAIN on 7/26/13.
+//  Created by RAJESH JAIN on 8/5/13.
 //  Copyright (c) 2013 RAJESH JAIN. All rights reserved.
 //
 
-#import "RESTClient.h"
-#import "NSURLRequest+RESTClient.h"
-@implementation RESTClient{
-
-}
-
-
+#import "AsyncRESTClient.h"
+@implementation AsyncRESTClient
 - (void) executeRequest:(NSURLRequest *)request
-                onError: (void (^) (NSInteger httpStatusCode, NSString* httpErrorString, NSString* responseData)) onerrorHandler
-           onCompletion: (void (^) (NSInteger httpStatusCode, NSString* httpStatusCodeString, NSString* responseData) ) onCompletionHandler{
+                onError: (void (^) (NSInteger httpStatusCode, NSString* httpErrorString, NSString* responseData, NSDictionary* responseHeaders)) onerrorHandler
+           onCompletion: (void (^) (NSInteger httpStatusCode, NSString* httpStatusCodeString, NSString* responseData, NSDictionary* responseHeaders) ) onCompletionHandler{
     assert(request != nil);
     
     // create the connection with the request and start loading the data
@@ -36,10 +31,10 @@
         NSString* localizedResponseCode = [NSHTTPURLResponse localizedStringForStatusCode:httpStatusCode];
         NSDictionary  *allResponseHeaders = [theResponse allHeaderFields];
         
-        if(theError == nil){
-            onerrorHandler (httpStatusCode, localizedResponseCode, recdDataString);
+        if(theError != nil){
+            onerrorHandler (httpStatusCode, localizedResponseCode, recdDataString, allResponseHeaders);
         }else{
-            onCompletionHandler (httpStatusCode, localizedResponseCode, recdDataString);
+            onCompletionHandler (httpStatusCode, localizedResponseCode, recdDataString, allResponseHeaders);
         }
         
         /*
@@ -61,6 +56,6 @@
     } else {
         // Inform the user that the connection failed.
     }
-   
+    
 }
 @end

@@ -7,7 +7,8 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "RESTClient.h"
+#import "SyncRESTClient.h"
+#import "NSURLRequest+RESTClient.h"
 @interface RESTClientTests : XCTestCase
 
 @end
@@ -28,10 +29,22 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testGetRequestSimple
 {
-    RESTClient *r=[[RESTClient alloc] init];
-    [r getData];
+    NSURLRequest *getRequest = [NSURLRequest httpGetRequestWithURL:[NSURL URLWithString:@"http://www.apple.com"]];    
+    RESTClient *restClient = [RESTClient new];
+    
+    [restClient executeRequest:getRequest
+                       onError:^(NSInteger httpStatusCode, NSString *httpErrorString, NSString *responseData){
+                           NSLog(@"Here");
+                       }
+                  onCompletion:^(NSInteger httpStatusCode, NSString *httpErrorString, NSString *responseData){
+                      NSLog(responseData);
+                  }];
 }
 
+
+- (void) testURL{
+    
+}
 @end
