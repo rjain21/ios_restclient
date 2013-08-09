@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
-
+#import "RESTClient.h"
+#import "SyncRESTClient.h"
 @interface ViewController ()
 
 @end
@@ -17,6 +18,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    id<RESTClient> restClient = [SyncRESTClient new];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
