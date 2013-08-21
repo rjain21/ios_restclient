@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E4AC828F17B497410060E298 /* libRESTClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AC828C17B4964F0060E298 /* libRESTClient.a */; };
 		E4BAAC5817B48D3700E19783 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BAAC5717B48D3700E19783 /* Foundation.framework */; };
 		E4BAAC5A17B48D3700E19783 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BAAC5917B48D3700E19783 /* CoreGraphics.framework */; };
 		E4BAAC5C17B48D3700E19783 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BAAC5B17B48D3700E19783 /* UIKit.framework */; };
@@ -23,10 +24,23 @@
 		E4BAAC8417B48D3700E19783 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4BAAC8217B48D3700E19783 /* InfoPlist.strings */; };
 		E4BAAC8617B48D3700E19783 /* RESTClientExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BAAC8517B48D3700E19783 /* RESTClientExampleTests.m */; };
 		E4BAACAD17B48EA100E19783 /* RESTClient.xcodeproj in Resources */ = {isa = PBXBuildFile; fileRef = E4BAACAC17B48EA100E19783 /* RESTClient.xcodeproj */; };
-		E4BAACAF17B48FA400E19783 /* libRESTClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BAACAE17B48FA400E19783 /* libRESTClient.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E4AC828B17B4964F0060E298 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4BAACAC17B48EA100E19783 /* RESTClient.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E41F390B179DCA3E00F443DE;
+			remoteInfo = RESTClient;
+		};
+		E4AC828D17B4964F0060E298 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4BAACAC17B48EA100E19783 /* RESTClient.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E41F391B179DCA3E00F443DE;
+			remoteInfo = RESTClientTests;
+		};
 		E4BAAC7D17B48D3700E19783 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E4BAAC4C17B48D3700E19783 /* Project object */;
@@ -57,7 +71,7 @@
 		E4BAAC8117B48D3700E19783 /* RESTClientExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RESTClientExampleTests-Info.plist"; sourceTree = "<group>"; };
 		E4BAAC8317B48D3700E19783 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E4BAAC8517B48D3700E19783 /* RESTClientExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RESTClientExampleTests.m; sourceTree = "<group>"; };
-		E4BAACAC17B48EA100E19783 /* RESTClient.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = file; name = RESTClient.xcodeproj; path = ../../RESTClient.xcodeproj; sourceTree = "<group>"; };
+		E4BAACAC17B48EA100E19783 /* RESTClient.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RESTClient.xcodeproj; path = ../../RESTClient.xcodeproj; sourceTree = "<group>"; };
 		E4BAACAE17B48FA400E19783 /* libRESTClient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRESTClient.a; path = "../../../../Library/Developer/Xcode/DerivedData/RESTClient-gponusazmoyjopeeyyhfjsoebqcf/Build/Products/Debug-iphoneos/libRESTClient.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4BAACAF17B48FA400E19783 /* libRESTClient.a in Frameworks */,
+				E4AC828F17B497410060E298 /* libRESTClient.a in Frameworks */,
 				E4BAAC5A17B48D3700E19783 /* CoreGraphics.framework in Frameworks */,
 				E4BAAC5C17B48D3700E19783 /* UIKit.framework in Frameworks */,
 				E4BAAC5817B48D3700E19783 /* Foundation.framework in Frameworks */,
@@ -86,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E4AC828717B4964F0060E298 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4AC828C17B4964F0060E298 /* libRESTClient.a */,
+				E4AC828E17B4964F0060E298 /* RESTClientTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		E4BAAC4B17B48D3700E19783 = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +251,12 @@
 			mainGroup = E4BAAC4B17B48D3700E19783;
 			productRefGroup = E4BAAC5517B48D3700E19783 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E4AC828717B4964F0060E298 /* Products */;
+					ProjectRef = E4BAACAC17B48EA100E19783 /* RESTClient.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				E4BAAC5317B48D3700E19783 /* RESTClientExample */,
@@ -235,6 +264,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E4AC828C17B4964F0060E298 /* libRESTClient.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRESTClient.a;
+			remoteRef = E4AC828B17B4964F0060E298 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E4AC828E17B4964F0060E298 /* RESTClientTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RESTClientTests.xctest;
+			remoteRef = E4AC828D17B4964F0060E298 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E4BAAC5217B48D3700E19783 /* Resources */ = {
@@ -408,6 +454,7 @@
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/RESTClient-gponusazmoyj/Debug-iphoneosopeeyyhfjsoebqcf/Build/Products",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "/Users/rjain/Code/RESTClient/**";
 				WRAPPER_EXTENSION = app;
@@ -428,6 +475,7 @@
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/RESTClient-gponusazmoyj/Debug-iphoneosopeeyyhfjsoebqcf/Build/Products",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "/Users/rjain/Code/RESTClient/**";
 				WRAPPER_EXTENSION = app;

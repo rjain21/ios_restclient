@@ -15,7 +15,7 @@
 
 
 #import "NSURLRequest+RESTClient.h"
-#import "NSString+RESTClientString.h"
+#import "NSString+RESTClient.h"
 
 @implementation NSURLRequest (RESTClient)
 

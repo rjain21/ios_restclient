@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 RAJESH JAIN. All rights reserved.
 //
 
-#import "NSString+RESTClientString.h"
+#import "NSString+RESTClient.h"
 
-@implementation NSString (RESTClientString)
+@implementation NSString (RESTClient)
 - (BOOL) isEqualIgnoreCase: (NSString*) other{
     NSString *selfStr = [self trim:self];
     return [selfStr compare:other options:NSCaseInsensitiveSearch] == NSOrderedSame;
