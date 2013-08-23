@@ -124,7 +124,7 @@
     NSDictionary * dict = [theRequest allHTTPHeaderFields];
     NSMutableDictionary* mutableDict = [NSMutableDictionary dictionaryWithDictionary:dict];
     [mutableDict addEntriesFromDictionary:headers];
-    [theRequest setValuesForKeysWithDictionary:mutableDict];
+    [theRequest setAllHTTPHeaderFields:mutableDict];
     
     /* Add Body */
     
@@ -141,7 +141,7 @@
         }else if (mimeType == MimeTypeXML){
             mimeTypeStr = @"application/xml";
         }else if (mimeType == MimeTypeJSON){
-            
+            mimeTypeStr = @"application/json";
         }else{
             NSLog(@"The MimeType of %u is not supported at this time", mimeType);
             assert(FALSE); //mimetype
