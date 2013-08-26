@@ -9,12 +9,10 @@
 #import "SyncRESTClient.h"
 #import "NSURLRequest+RESTClient.h"
 @implementation SyncRESTClient{
-
 }
 
-
 - (void) executeRequest:(NSURLRequest *)request
-                onError: (void (^) (NSInteger httpStatusCode, NSString* httpErrorString, NSString* responseData, NSDictionary* responseHeaders)) onerrorHandler
+                onError: (void (^) (NSError* error)) onerrorHandler
            onCompletion: (void (^) (NSInteger httpStatusCode, NSString* httpStatusCodeString, NSString* responseData, NSDictionary* responseHeaders) ) onCompletionHandler{
     assert(request != nil);
     
@@ -37,7 +35,7 @@
         NSDictionary  *allResponseHeaders = [theResponse allHeaderFields];
         
         if(theError != nil){
-            onerrorHandler (httpStatusCode, localizedResponseCode, recdDataString, allResponseHeaders);
+            onerrorHandler (theError);
         }else{
             onCompletionHandler (httpStatusCode, localizedResponseCode, recdDataString, allResponseHeaders);
         }

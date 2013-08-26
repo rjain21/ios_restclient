@@ -48,16 +48,7 @@
     NSURL* apiURL = [NSURL URLWithString:theURl];
     
     NSURLRequest* theRequest = [NSURLRequest httpGetRequestWithURL:apiURL headerFields:headers];
-    id<RESTClient> restClient = [SyncRESTClient new];
-    
-    [restClient executeRequest:theRequest
-                       onError:^(NSInteger httpStatusCode, NSString *httpErrorString, NSString *responseData, NSDictionary* responseHeaders){
-                           NSLog(@"Here");
-                       }
-                  onCompletion:^(NSInteger httpStatusCode, NSString *httpErrorString, NSString *responseData, NSDictionary* responseHeaders){
-                      NSLog(@"%@", responseData);
-                      
-                  }];
+    [self executeRequest:theRequest];
 }
 
 
@@ -65,26 +56,18 @@
     NSDictionary *headers = @{@"X-TrackerToken": userToken};
     NSURLRequest *theRequest = [NSURLRequest httpGetRequestWithURL:[NSURL URLWithString:@"https://www.pivotaltracker.com/services/v5/projects"] headerFields:headers];
     
-    id<RESTClient> restClient = [SyncRESTClient new];
-    
-    [restClient executeRequest:theRequest
-                       onError:^(NSInteger httpStatusCode, NSString *httpErrorString, NSString *responseData, NSDictionary* responseHeaders){
-                           NSLog(@"Here");
-                       }
-                  onCompletion:^(NSInteger httpStatusCode, NSString *httpErrorString, NSString *responseData, NSDictionary* responseHeaders){
-                      NSLog(@"%@", responseData);
-                      
-                  }];
+    [self executeRequest:theRequest];
 }
 
 - (void) executeRequest:(NSURLRequest*) theRequest{
     id<RESTClient> restClient = [SyncRESTClient new];
     
     [restClient executeRequest:theRequest
-                       onError:^(NSInteger httpStatusCode, NSString *httpErrorString, NSString *responseData, NSDictionary* responseHeaders){
-                           NSLog(@"Here");
+                       onError:^(NSError* error){
+                           NSLog(@"---ERROR-----Error Code: %d. Error String : %@", error.code, error.description);
                        }
                   onCompletion:^(NSInteger httpStatusCode, NSString *httpErrorString, NSString *responseData, NSDictionary* responseHeaders){
+                      NSLog(@"---Success-----HTTPSTatusCode : %d. Error String : %@", httpStatusCode,httpErrorString);
                       NSLog(@"%@", responseData);
                       
                   }];
@@ -107,7 +90,7 @@
     
     NSURL *urlToAPI = [NSURL URLWithString:@"https://www.pivotaltracker.com/services/v5/projects/897528"];
     
-    NSString* theBody =@"{\"name\":\"Name Updated\"}";
+    NSString* theBody =@"{\"name\":\"Name Updated to New Name\"}";
     
     NSURLRequest *theRequest = [NSURLRequest httpPutRequestWithURL:urlToAPI headerFields:headers body:theBody mimeType:MimeTypeJSON];
     [self executeRequest:theRequest];
@@ -119,11 +102,9 @@
 - (void) deleteProject{
     NSDictionary *headers = @{@"X-TrackerToken": userToken};
     
-    NSURL *urlToAPI = [NSURL URLWithString:@"https://www.pivotaltracker.com/services/v5/projects"];
+    NSURL *urlToAPI = [NSURL URLWithString:@"https://www.wwpivotaltracker.com/services/v5/projects/897528"];
     
-    NSString* theBody =@"{\"name\":\"Rajesh Jain Test\"}";
-    
-    NSURLRequest *theRequest = [NSURLRequest httpPostRequestWithURL:urlToAPI headerFields:headers body:theBody mimeType:MimeTypeJSON];
+    NSURLRequest *theRequest = [NSURLRequest httpDeleteRequestWithURL:urlToAPI headerFields:headers];
     [self executeRequest:theRequest];
     
 }
@@ -131,7 +112,7 @@
 
 - (IBAction)buttonClick:(id)sender {
     
-    [self changeNameOfProject];    
+    [self deleteProject];
 }
 
 @end
