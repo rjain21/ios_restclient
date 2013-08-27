@@ -57,7 +57,7 @@
         
         
     } else {
-        // Inform the user that the connection failed.
+        onerrorHandler(nil);
     }
    
 }
