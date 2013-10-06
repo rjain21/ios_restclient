@@ -55,6 +55,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5A1BC9981801D47D0054C60D /* AsyncRESTClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncRESTClient.h; sourceTree = "<group>"; };
+		5A1BC9991801D47D0054C60D /* NSString+RESTClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RESTClient.h"; sourceTree = "<group>"; };
+		5A1BC99A1801D47D0054C60D /* NSURL+RESTClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+RESTClient.h"; sourceTree = "<group>"; };
+		5A1BC99B1801D47D0054C60D /* NSURLRequest+RESTClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+RESTClient.h"; sourceTree = "<group>"; };
+		5A1BC99C1801D47D0054C60D /* RESTClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESTClient.h; sourceTree = "<group>"; };
+		5A1BC99D1801D47D0054C60D /* SyncRESTClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncRESTClient.h; sourceTree = "<group>"; };
 		E417AD00179E2AD800E1193D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		E417AD01179E2AD800E1193D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		E41F390B179DCA3E00F443DE /* libRESTClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRESTClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,19 +71,13 @@
 		E41F3926179DCA3E00F443DE /* RESTClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RESTClientTests-Info.plist"; sourceTree = "<group>"; };
 		E41F3928179DCA3E00F443DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E41F392A179DCA3E00F443DE /* RESTClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RESTClientTests.m; sourceTree = "<group>"; };
-		E41F3937179DCCFC00F443DE /* NSURLRequest+RESTClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURLRequest+RESTClient.h"; path = "RESTClient/NSURLRequest+RESTClient.h"; sourceTree = "<group>"; };
 		E41F3938179DCCFC00F443DE /* NSURLRequest+RESTClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURLRequest+RESTClient.m"; path = "RESTClient/NSURLRequest+RESTClient.m"; sourceTree = "<group>"; };
-		E430BA4E179E270400053ABB /* NSString+RESTClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RESTClient.h"; sourceTree = "<group>"; };
 		E430BA4F179E270400053ABB /* NSString+RESTClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RESTClient.m"; sourceTree = "<group>"; };
-		E439203617B02DA000C56FA9 /* RESTClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESTClient.h; sourceTree = "<group>"; };
-		E439203717B02E1F00C56FA9 /* AsyncRESTClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncRESTClient.h; sourceTree = "<group>"; };
 		E439203817B02E1F00C56FA9 /* AsyncRESTClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncRESTClient.m; sourceTree = "<group>"; };
-		E46EBBE717C472F500ABFD8A /* NSURL+RESTClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+RESTClient.h"; sourceTree = "<group>"; };
 		E46EBBE817C472F500ABFD8A /* NSURL+RESTClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+RESTClient.m"; sourceTree = "<group>"; };
-		E4799E5717A37C34004B9473 /* SyncRESTClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncRESTClient.h; sourceTree = SOURCE_ROOT; };
 		E4799E5817A37C34004B9473 /* SyncRESTClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncRESTClient.m; sourceTree = SOURCE_ROOT; };
 		E497C907179E690D004767F8 /* NSStringUtilityTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringUtilityTests.m; sourceTree = "<group>"; };
-		E4EED26617B19C5800B1613A /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		E4EED26617B19C5800B1613A /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "../Base64/NSData+Base64.h"; sourceTree = "<group>"; };
 		E4EED26717B19C5800B1613A /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		E4F29371179F418E00595C97 /* NSUrlRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSUrlRequestTest.m; sourceTree = "<group>"; };
 		E4FE7B0117B9792F00086A63 /* testPVT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testPVT.m; sourceTree = "<group>"; };
@@ -105,15 +105,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A1BC9951801D37C0054C60D /* headers */ = {
+			isa = PBXGroup;
+			children = (
+				E4EED26617B19C5800B1613A /* NSData+Base64.h */,
+				5A1BC9981801D47D0054C60D /* AsyncRESTClient.h */,
+				5A1BC9991801D47D0054C60D /* NSString+RESTClient.h */,
+				5A1BC99A1801D47D0054C60D /* NSURL+RESTClient.h */,
+				5A1BC99B1801D47D0054C60D /* NSURLRequest+RESTClient.h */,
+				5A1BC99C1801D47D0054C60D /* RESTClient.h */,
+				5A1BC99D1801D47D0054C60D /* SyncRESTClient.h */,
+			);
+			path = headers;
+			sourceTree = "<group>";
+		};
 		E41F3902179DCA3E00F443DE = {
 			isa = PBXGroup;
 			children = (
+				5A1BC9951801D37C0054C60D /* headers */,
 				E4EED26517B19C2F00B1613A /* Base64 */,
-				E430BA4E179E270400053ABB /* NSString+RESTClient.h */,
 				E430BA4F179E270400053ABB /* NSString+RESTClient.m */,
-				E46EBBE717C472F500ABFD8A /* NSURL+RESTClient.h */,
 				E46EBBE817C472F500ABFD8A /* NSURL+RESTClient.m */,
-				E41F3937179DCCFC00F443DE /* NSURLRequest+RESTClient.h */,
 				E41F3938179DCCFC00F443DE /* NSURLRequest+RESTClient.m */,
 				E417AD00179E2AD800E1193D /* LICENSE */,
 				E417AD01179E2AD800E1193D /* README.md */,
@@ -145,10 +157,7 @@
 		E41F3910179DCA3E00F443DE /* RESTClient */ = {
 			isa = PBXGroup;
 			children = (
-				E439203617B02DA000C56FA9 /* RESTClient.h */,
-				E4799E5717A37C34004B9473 /* SyncRESTClient.h */,
 				E4799E5817A37C34004B9473 /* SyncRESTClient.m */,
-				E439203717B02E1F00C56FA9 /* AsyncRESTClient.h */,
 				E439203817B02E1F00C56FA9 /* AsyncRESTClient.m */,
 				E41F3911179DCA3E00F443DE /* Supporting Files */,
 			);
@@ -187,7 +196,6 @@
 		E4EED26517B19C2F00B1613A /* Base64 */ = {
 			isa = PBXGroup;
 			children = (
-				E4EED26617B19C5800B1613A /* NSData+Base64.h */,
 				E4EED26717B19C5800B1613A /* NSData+Base64.m */,
 			);
 			path = Base64;
