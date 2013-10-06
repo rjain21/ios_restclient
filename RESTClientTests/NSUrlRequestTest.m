@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "NSURLRequest+RESTClient.h"
-#import "NSString+RESTClientString.h"
+#import "NSString+RESTClient.h"
 @interface NSUrlRequestTest : XCTestCase
 
 @end

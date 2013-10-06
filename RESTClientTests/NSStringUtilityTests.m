@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "NSString+RESTClientString.h"
+#import "NSString+RESTClient.h"
 @interface NSStringUtilityTests : XCTestCase
 
 @end

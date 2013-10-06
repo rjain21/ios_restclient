@@ -36,7 +36,7 @@
 {
     NSURLRequest *getRequest = [NSURLRequest httpGetRequestWithURL:[NSURL URLWithString:@"http://www.apple.com"]];    
     id<RESTClient> restClient = [SyncRESTClient new];
-    
+    /*
     [restClient executeRequest:getRequest
                        onError:^(NSInteger httpStatusCode, NSString *httpErrorString, NSString *responseData, NSDictionary* responseHeaders){
                            NSLog(@"Here");
@@ -44,6 +44,7 @@
                   onCompletion:^(NSInteger httpStatusCode, NSString *httpErrorString, NSString *responseData, NSDictionary* responseHeaders){
                       NSLog(@"%@", responseData);
                   }];
+     */
 }
 
 
