@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "RESTClient.h"
-@interface AsyncRESTClient : NSObject <RESTClient>
+@interface AsyncRESTClient : NSObject <RESTClient, NSURLConnectionDelegate>
 
 @end
