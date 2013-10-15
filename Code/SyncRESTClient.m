@@ -14,7 +14,7 @@
 - (void) executeRequest:(NSURLRequest *)request
                 onError: (void (^) (NSError*)) onerrorHandler
            onCompletion: (void (^) (NSHTTPURLResponse* httpResponse,
-                                    NSString* responseData
+                                    NSData* responseData
                                     )) onCompletionHandler {
 
 
@@ -24,12 +24,17 @@
     NSError* theError;
     
     NSData *recdData = [NSURLConnection sendSynchronousRequest:request returningResponse:&theResponse error:&theError];
+    
+    
     NSString *recdDataString = [NSString stringWithUTF8String:recdData.bytes];
+    
+    NSLog(@"\n----Response Recd %d bytes-------\n %@ \n-------End Response--------\n", recdData.length, recdDataString);
     
     if(theError != nil){
         onerrorHandler (theError);
     }else{
-        onCompletionHandler (theResponse, recdDataString);
+        onCompletionHandler (theResponse, recdData);
     }
+
 }
 @end

@@ -7,7 +7,7 @@
 //
 #define MAX_CONNECTIONS 3
 #import "AsyncRESTClient.h"
-typedef void (^ onSuccessResponse) (NSHTTPURLResponse* httpResponse, NSString* responseData);
+typedef void (^ onSuccessResponse) (NSHTTPURLResponse* httpResponse, NSData* responseData);
 
 @implementation AsyncRESTClient
 {
@@ -44,7 +44,7 @@ typedef void (^ onSuccessResponse) (NSHTTPURLResponse* httpResponse, NSString* r
 
 - (void) executeRequest:(NSURLRequest *)request
                 onError: (void (^) (NSError* error)) onerrorHandler
-           onCompletion: (void (^) (NSHTTPURLResponse* httpResponse, NSString* responseData)) onCompletionHandler{
+           onCompletion: (void (^) (NSHTTPURLResponse* httpResponse, NSData* responseData)) onCompletionHandler{
     assert(request != nil);
     successResponse = onCompletionHandler;
     

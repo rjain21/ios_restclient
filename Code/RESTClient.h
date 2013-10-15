@@ -13,6 +13,6 @@
 - (void) executeRequest:(NSURLRequest *)request
                 onError: (void (^) (NSError*)) onerrorHandler
            onCompletion: (void (^) (NSHTTPURLResponse* httpResponse,
-                                    NSString* responseData
+                                    NSData* responseData
                                     )) onCompletionHandler;
 @end
