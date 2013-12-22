@@ -33,4 +33,13 @@
     }
 }
 
+-(NSString*) urlEncodedString{
+    return (__bridge_transfer NSString *)
+        CFURLCreateStringByAddingPercentEscapes(
+                                                NULL,
+                                                (__bridge CFStringRef)self,
+                                                NULL,
+                                                CFSTR("!*'();:@&=+$,/?%#[]\" "),
+                                                CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
+}
 @end

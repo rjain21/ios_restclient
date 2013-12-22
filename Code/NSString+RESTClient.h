@@ -13,4 +13,6 @@
 - (BOOL) isEqualIgnoreCase: (NSString*) other shouldTrimSpaces:(BOOL) shouldTrimSpaces;
 - (NSString*) trim: (NSString*) stringToTrim;
 - (BOOL) isEmpty;
+- (NSString*) urlEncodedString;
+
 @end
