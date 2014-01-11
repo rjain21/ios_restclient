@@ -43,7 +43,7 @@ typedef void (^ onSuccessResponse) (NSHTTPURLResponse* httpResponse, NSData* res
 }
 
 - (void) executeRequest:(NSURLRequest *)request
-                onError: (void (^) (NSError* error)) onerrorHandler
+                onError: (void (^) (NSError* error)) onErrorHandler
            onCompletion: (void (^) (NSHTTPURLResponse* httpResponse, NSData* responseData)) onCompletionHandler{
     assert(request != nil);
     successResponse = onCompletionHandler;

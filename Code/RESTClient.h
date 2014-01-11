@@ -11,7 +11,7 @@
 @protocol RESTClient <NSObject>
 @required
 - (void) executeRequest:(NSURLRequest *)request
-                onError: (void (^) (NSError*)) onerrorHandler
+                onError: (void (^) (NSError*)) onErrorHandler
            onCompletion: (void (^) (NSHTTPURLResponse* httpResponse,
                                     NSData* responseData
                                     )) onCompletionHandler;

@@ -12,7 +12,7 @@
 }
 
 - (void) executeRequest:(NSURLRequest *)request
-                onError: (void (^) (NSError*)) onerrorHandler
+                onError: (void (^) (NSError*)) onErrorHandler
            onCompletion: (void (^) (NSHTTPURLResponse* httpResponse,
                                     NSData* responseData
                                     )) onCompletionHandler {
@@ -31,7 +31,7 @@
     NSLog(@"\n----Response Recd %d bytes-------\n %@ \n-------End Response--------\n", recdData.length, recdDataString);
     
     if(theError != nil){
-        onerrorHandler (theError);
+        onErrorHandler (theError);
     }else{
         onCompletionHandler (theResponse, recdData);
     }

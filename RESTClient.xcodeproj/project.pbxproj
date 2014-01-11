@@ -24,6 +24,12 @@
 		E497C908179E690D004767F8 /* NSStringUtilityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E497C907179E690D004767F8 /* NSStringUtilityTests.m */; };
 		E4F29372179F418E00595C97 /* NSUrlRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F29371179F418E00595C97 /* NSUrlRequestTest.m */; };
 		E4FE7B0217B9792F00086A63 /* testPVT.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FE7B0117B9792F00086A63 /* testPVT.m */; };
+		F3A4D2FE1880E8C80074861D /* NSString+RESTClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F434F18075BC800EEEBD9 /* NSString+RESTClient.m */; };
+		F3A4D2FF1880E8CB0074861D /* NSURL+RESTClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F435018075BC800EEEBD9 /* NSURL+RESTClient.m */; };
+		F3A4D3001880E8CE0074861D /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F434D18075BA200EEEBD9 /* NSData+Base64.m */; };
+		F3A4D3011880E8D30074861D /* AsyncRESTClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F435918075C7200EEEBD9 /* AsyncRESTClient.m */; };
+		F3A4D3021880E8D60074861D /* SyncRESTClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F435718075C5E00EEEBD9 /* SyncRESTClient.m */; };
+		F3A4D3031880E8DA0074861D /* NSURLRequest+RESTClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F435418075BF200EEEBD9 /* NSURLRequest+RESTClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -284,9 +290,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E497C908179E690D004767F8 /* NSStringUtilityTests.m in Sources */,
+				F3A4D3031880E8DA0074861D /* NSURLRequest+RESTClient.m in Sources */,
+				F3A4D2FF1880E8CB0074861D /* NSURL+RESTClient.m in Sources */,
 				E41F392B179DCA3E00F443DE /* RESTClientTests.m in Sources */,
+				F3A4D3001880E8CE0074861D /* NSData+Base64.m in Sources */,
 				E4F29372179F418E00595C97 /* NSUrlRequestTest.m in Sources */,
+				F3A4D2FE1880E8C80074861D /* NSString+RESTClient.m in Sources */,
 				E4FE7B0217B9792F00086A63 /* testPVT.m in Sources */,
+				F3A4D3011880E8D30074861D /* AsyncRESTClient.m in Sources */,
+				F3A4D3021880E8D60074861D /* SyncRESTClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,7 +397,10 @@
 				DSTROOT = /tmp/RESTClient.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RESTClient/RESTClient-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -399,7 +414,10 @@
 				DSTROOT = /tmp/RESTClient.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RESTClient/RESTClient-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
