@@ -47,7 +47,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 Attribution
-\=============
-<br/>
+=============
 Uses Base 64 Encoding and Decoding by Matt Gallagher on 2009/06/03. All rights reserved
 by Matt.
