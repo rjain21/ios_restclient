@@ -25,4 +25,6 @@ THE SOFTWARE.
 Attribution
 =============
 Uses Base 64 Encoding and Decoding by Matt Gallagher on 2009/06/03. All rights reserved
-by Matt. <https://github.com/l4u/NSData-Base64>
+by Matt. 
+
+Please See : <https://github.com/l4u/NSData-Base64>
