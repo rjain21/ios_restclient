@@ -36,15 +36,18 @@
 {
     NSURLRequest *getRequest = [NSURLRequest httpGetRequestWithURL:[NSURL URLWithString:@"http://www.apple.com"]];    
     id<RESTClient> restClient = [SyncRESTClient new];
-    /*
-    [restClient executeRequest:getRequest
-                       onError:^(NSInteger httpStatusCode, NSString *httpErrorString, NSString *responseData, NSDictionary* responseHeaders){
-                           NSLog(@"Here");
-                       }
-                  onCompletion:^(NSInteger httpStatusCode, NSString *httpErrorString, NSString *responseData, NSDictionary* responseHeaders){
-                      NSLog(@"%@", responseData);
-                  }];
-     */
+    
+    [restClient executeRequest:getRequest onError:^(NSError* error)
+     {
+         NSLog(@"%@", [error description]);
+     }
+    
+    onCompletion:^(NSHTTPURLResponse *httpResponse, NSData* responseData)
+     {
+         NSLog(@"%@",[NSHTTPURLResponse localizedStringForStatusCode:httpResponse.statusCode]);
+
+     }];
+    
 }
 
 
@@ -60,20 +63,23 @@
                               @"Authorization": authStr
                               };
     
-    /*
-    NSURLRequest *getRequest = [NSURLRequest httpGetRequestWithURL:[NSURL URLWithString:@"https://www.pivotaltracker.com/services/v3/tokens/active"] headerFields:headers];
+    
+    NSURLRequest *getRequest = [NSURLRequest httpGetRequestWithURL:[NSURL URLWithString:@"https://www.pivotaltracker.com/services/v3/tokens/active"] allHeaders:headers];
     
     id<RESTClient> restClient = [SyncRESTClient new];
     
     [restClient executeRequest:getRequest
-                       onError:^(NSInteger httpStatusCode, NSString *httpErrorString, NSString *responseData, NSDictionary* responseHeaders){
+                       onError:^(NSError * error){
                            NSLog(@"Here");
+                           XCTAssertFalse(NO, @"Received %@", [error debugDescription]);
                        }
-                  onCompletion:^(NSInteger httpStatusCode, NSString *httpErrorString, NSString *responseData, NSDictionary* responseHeaders){
+
+                  onCompletion:^(NSHTTPURLResponse *httpResponse, NSData* responseData){
                       NSLog(@"%@", responseData);
+                      XCTAssertTrue(YES, @"Got a Proper Response");
                   }];
      
-     */
+    
 }
 
 

@@ -21,46 +21,46 @@
 
 #pragma mark - HTTP GET
 + (NSURLRequest*)httpGetRequestWithURL:(NSURL *)theURL{
-    return [self httpGetRequestWithURL:theURL headerFields:nil];
+    return [self httpGetRequestWithURL:theURL allHeaders:nil];
 }
 
-+ (NSURLRequest*)httpGetRequestWithURL:(NSURL *)theURL headerFields:(NSDictionary*) headers{
-    return [self httpGetRequestWithURL:theURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:REST_TIME_OUTINTERVAL_DEFAULT headerFields:headers];
++ (NSURLRequest*)httpGetRequestWithURL:(NSURL *)theURL allHeaders:(NSDictionary*) headers{
+    return [self httpGetRequestWithURL:theURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:REST_TIME_OUTINTERVAL_DEFAULT allHeaders:headers];
 }
 
-+ (NSURLRequest*)httpGetRequestWithURL:(NSURL *)theURL cachePolicy:(NSURLRequestCachePolicy)cachePolicy timeoutInterval:(NSTimeInterval)timeoutInterval headerFields:(NSDictionary*) headers{
- return [self createRequestWithgURL:theURL cachePolicy:cachePolicy timeoutInterval:timeoutInterval headerFields:headers body:nil requestType:REST_HTTP_TYPE_GET mimeType:MimeTypePlainText];
++ (NSURLRequest*)httpGetRequestWithURL:(NSURL *)theURL cachePolicy:(NSURLRequestCachePolicy)cachePolicy timeoutInterval:(NSTimeInterval)timeoutInterval allHeaders:(NSDictionary*) headers{
+ return [self createRequestWithgURL:theURL cachePolicy:cachePolicy timeoutInterval:timeoutInterval allHeaders:headers body:nil requestType:REST_HTTP_TYPE_GET mimeType:MimeTypePlainText];
 }
 
 #pragma mark - HTTP DELETE
 + (NSURLRequest*)httpDeleteRequestWithURL:(NSURL *)theURL{
-    return [self httpDeleteRequestWithURL:theURL headerFields:nil];
+    return [self httpDeleteRequestWithURL:theURL allHeaders:nil];
 }
 
-+ (NSURLRequest*)httpDeleteRequestWithURL:(NSURL *)theURL headerFields:(NSDictionary*) headers{
-    return [self httpDeleteRequestWithURL:theURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:REST_TIME_OUTINTERVAL_DEFAULT headerFields:headers];
++ (NSURLRequest*)httpDeleteRequestWithURL:(NSURL *)theURL allHeaders:(NSDictionary*) headers{
+    return [self httpDeleteRequestWithURL:theURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:REST_TIME_OUTINTERVAL_DEFAULT allHeaders:headers];
 }
-+ (NSURLRequest*)httpDeleteRequestWithURL:(NSURL *)theURL cachePolicy:(NSURLRequestCachePolicy)cachePolicy timeoutInterval:(NSTimeInterval)timeoutInterval headerFields:(NSDictionary*) headers{
-    return [self createRequestWithgURL:theURL cachePolicy:cachePolicy timeoutInterval:timeoutInterval headerFields:headers body:nil requestType:REST_HTTP_TYPE_DELETE mimeType:MimeTypePlainText];
++ (NSURLRequest*)httpDeleteRequestWithURL:(NSURL *)theURL cachePolicy:(NSURLRequestCachePolicy)cachePolicy timeoutInterval:(NSTimeInterval)timeoutInterval allHeaders:(NSDictionary*) headers{
+    return [self createRequestWithgURL:theURL cachePolicy:cachePolicy timeoutInterval:timeoutInterval allHeaders:headers body:nil requestType:REST_HTTP_TYPE_DELETE mimeType:MimeTypePlainText];
 }
 
 
 
 #pragma mark - HTTP POST
 + (NSURLRequest*)httpPostRequestWithURL:(NSURL *)theURL body:(NSString*) stringBody mimeType: (MimeType) mimeType{
-    return [self httpPostRequestWithURL:theURL headerFields:nil body:stringBody mimeType:mimeType];
+    return [self httpPostRequestWithURL:theURL allHeaders:nil body:stringBody mimeType:mimeType];
 }
 
-+ (NSURLRequest*)httpPostRequestWithURL:(NSURL *)theURL headerFields:(NSDictionary*) headers
++ (NSURLRequest*)httpPostRequestWithURL:(NSURL *)theURL allHeaders:(NSDictionary*) headers
                                    body:(NSString*) stringBody mimeType: (MimeType) mimeType{
     
-    return [self httpPostRequestWithURL:theURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:REST_TIME_OUTINTERVAL_DEFAULT headerFields:headers body:stringBody mimeType:mimeType];
+    return [self httpPostRequestWithURL:theURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:REST_TIME_OUTINTERVAL_DEFAULT allHeaders:headers body:stringBody mimeType:mimeType];
 }
 
-+ (NSURLRequest*)httpPostRequestWithURL:(NSURL *)theURL cachePolicy:(NSURLRequestCachePolicy)cachePolicy timeoutInterval:(NSTimeInterval)timeoutInterval headerFields:(NSDictionary*) headers body:(NSString*) stringBody mimeType: (MimeType) mimeType{
++ (NSURLRequest*)httpPostRequestWithURL:(NSURL *)theURL cachePolicy:(NSURLRequestCachePolicy)cachePolicy timeoutInterval:(NSTimeInterval)timeoutInterval allHeaders:(NSDictionary*) headers body:(NSString*) stringBody mimeType: (MimeType) mimeType{
    return [self createRequestWithgURL:theURL cachePolicy:cachePolicy
                       timeoutInterval:timeoutInterval
-                         headerFields:headers body:stringBody
+                         allHeaders:headers body:stringBody
                           requestType:REST_HTTP_TYPE_POST
                              mimeType:mimeType];
 }
@@ -69,25 +69,25 @@
 #pragma mark - HTTP PUT
 
 + (NSURLRequest*)httpPutRequestWithURL:(NSURL *)theURL body:(NSString*) stringBody mimeType: (MimeType) mimeType{
-    return [self httpPutRequestWithURL:theURL headerFields:nil body:stringBody mimeType:mimeType];
+    return [self httpPutRequestWithURL:theURL allHeaders:nil body:stringBody mimeType:mimeType];
 }
 
 
-+ (NSURLRequest*)httpPutRequestWithURL:(NSURL *)theURL headerFields:(NSDictionary*) headers body:(NSString*) stringBody mimeType: (MimeType) mimeType{
-    return [self httpPutRequestWithURL:theURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:REST_TIME_OUTINTERVAL_DEFAULT headerFields:headers body:stringBody mimeType:mimeType];
++ (NSURLRequest*)httpPutRequestWithURL:(NSURL *)theURL allHeaders:(NSDictionary*) headers body:(NSString*) stringBody mimeType: (MimeType) mimeType{
+    return [self httpPutRequestWithURL:theURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:REST_TIME_OUTINTERVAL_DEFAULT allHeaders:headers body:stringBody mimeType:mimeType];
 
 }
 
-+ (NSURLRequest*)httpPutRequestWithURL:(NSURL *)theURL cachePolicy:(NSURLRequestCachePolicy)cachePolicy timeoutInterval:(NSTimeInterval)timeoutInterval headerFields:(NSDictionary*) headers body:(NSString*) stringBody mimeType:(MimeType)mimeType{
++ (NSURLRequest*)httpPutRequestWithURL:(NSURL *)theURL cachePolicy:(NSURLRequestCachePolicy)cachePolicy timeoutInterval:(NSTimeInterval)timeoutInterval allHeaders:(NSDictionary*) headers body:(NSString*) stringBody mimeType:(MimeType)mimeType{
     
-    return [self createRequestWithgURL:theURL cachePolicy:cachePolicy timeoutInterval:timeoutInterval headerFields:headers body:stringBody requestType:REST_HTTP_TYPE_PUT mimeType:(MimeType)mimeType];
+    return [self createRequestWithgURL:theURL cachePolicy:cachePolicy timeoutInterval:timeoutInterval allHeaders:headers body:stringBody requestType:REST_HTTP_TYPE_PUT mimeType:(MimeType)mimeType];
 
 }
 
 +(NSURLRequest*) createRequestWithgURL: (NSURL*) theURL
                            cachePolicy:(NSURLRequestCachePolicy)cachePolicy
                        timeoutInterval:(NSTimeInterval)timeoutInterval
-                          headerFields:(NSDictionary*) headers
+                          allHeaders:(NSDictionary*) headers
                                   body:(NSString*) stringBody
                            requestType:(NSString*) requestType
                               mimeType: (MimeType) mimeType{
